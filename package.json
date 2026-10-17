@@ -1,0 +1,22 @@
+{
+  "name": "keller-hvac-services",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Keller HVAC Services website — Next.js frontend, NestJS API, SQLite3 database",
+  "scripts": {
+    "postinstall": "npm --prefix backend install && npm --prefix frontend install",
+    "setup": "node scripts/setup-env.js && npm --prefix backend run seed",
+    "dev": "concurrently -k -n api,web -c magenta,cyan \"npm --prefix backend run start:dev\" \"npm --prefix frontend run dev\"",
+    "build": "npm --prefix backend run build && npm --prefix frontend run build",
+    "start": "concurrently -k -n api,web -c magenta,cyan \"npm --prefix backend run start\" \"npm --prefix frontend run start\"",
+    "seed": "npm --prefix backend run seed",
+    "db:reset": "npm --prefix backend run seed:reset",
+    "typecheck": "npm --prefix backend run typecheck && npm --prefix frontend run typecheck"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

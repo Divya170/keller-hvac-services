@@ -1,0 +1,122 @@
+/* ===== Keller HVAC Services — tokens & base ===== */
+:root {
+  --bg: #fafaf7;
+  --white: #fff;
+  --ink: #202c35;
+  --navy: #102b40;
+  --blue: #153b5b;
+  --blue-hi: #0b2236;
+  --orange: #f47b35;
+  --orange-hi: #ff8e4d;
+  --orange-soft: #f7a06e;
+  --muted: #526575;
+  --line: #d9e2e8;
+  --line-2: #c9d5dd;
+  --line-3: #dce5eb;
+  --tint: #eaf0f3;
+  --slate: #dce5eb;
+  --rust: #a04a12;
+  --draft-bg: #fff4ec;
+  --draft-ink: #7a3a0e;
+  --err: #b42318;
+  --err-ink: #912018;
+  --err-bg: #fef3f2;
+  --ok: #1f7a4d;
+  --ok-bg: #edf6f1;
+  --ok-line: #b9dcc8;
+  --f-display: 'Manrope', system-ui, sans-serif;
+  --f-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --f-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --gutter: clamp(20px, 4vw, 48px);
+  --gutter-lg: clamp(20px, 4vw, 64px);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--f-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+a {
+  color: var(--blue);
+}
+a:hover {
+  color: var(--blue-hi);
+}
+h1,
+h2,
+h3,
+p,
+ul,
+ol {
+  margin: 0;
+}
+button {
+  font-family: inherit;
+}
+img {
+  max-width: 100%;
+}
+:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 8px;
+  z-index: 100;
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 18px;
+  border: 0;
+  font: 600 15px var(--f-display);
+}
+.skip-link:focus {
+  left: 12px;
+  color: #fff;
+}
+@keyframes kspin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Responsive helpers (the prototype switches layouts at 1100px) */
+.only-mobile {
+  display: none !important;
+}
+@media (max-width: 1099.98px) {
+  .only-desktop {
+    display: none !important;
+  }
+  .only-mobile {
+    display: inline-flex !important;
+  }
+}
